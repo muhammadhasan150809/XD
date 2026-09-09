@@ -1,0 +1,193 @@
+:root {
+  --backgroundcolor: rgba(0, 140, 255, 0.993);
+  --sec-backgroundcolor: rgba(3, 142, 255, , 0.295);
+  --divbackgroundcolorhover: rgba(3, 142, 255, 0.377);
+  --divshadow: rgba(100, 181, 248, 0.993);
+  --fontmain: rgb(255, 255, 255);
+  --fontsec: rgba(226, 228, 230, 0.616);
+}
+
+body {
+  background-color: var(--backgroundcolor);
+}
+
+.div {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  border: solid 1px azure;
+  background-color: var(--sec-backgroundcolor);
+  justify-items: center;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  transition: 500ms;
+  box-shadow: 1px 1px 10px var(--divshadow);
+  width: 306px;
+}
+
+.div:hover {
+  background-color: var(--divbackgroundcolorhover);
+  transform: translatey(-5px);
+  box-shadow: 0px 0px 20px 12px var(--divshadow);
+}
+
+label {
+  font-weight: 700;
+  color: var(--fontmain);
+  font-family: Helvetica;
+  font-size: xx-large;
+}
+input::placeholder {
+  font-weight: 700;
+  color: var(--fontsec);
+  font-family: Helvetica;
+  font-size: 1.01em;
+}
+input {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--fontmain);
+  font-family: Helvetica;
+  align-self: center;
+  justify-self: center;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 25px;
+  background-color: transparent;
+  border: solid var(--fontmain) 2px;
+}
+
+button {
+  font-size: x-large;
+  justify-self: center;
+  align-self: center;
+  background-color: transparent;
+  border: solid var(--fontmain);
+  color: var(--fontmain);
+  width: 50%;
+  height: 40px;
+  border-radius: 25px;
+  transition: 500ms;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fontmain);
+}
+
+button:focus {
+  color: var(--fontmain);
+  background-color: var(--backgroundcolor);
+}
+
+button:hover {
+  color: var(--backgroundcolor);
+  background-color: white;
+}
+
+#diceImages {
+  display: flex;
+  margin: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  border-radius: 10px;
+  width: 90px;
+  margin: 10px 10px;
+}
+
+#Dice {
+  margin: 5% auto;
+  width: auto;
+}
+
+.dice-container:hover {
+  background-color: transparent;
+}
+
+.dice {
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: -50px;
+}
+
+#diceImages {
+  padding-bottom: 20px;
+  width: fit-content;
+  max-width: 65%;
+}
+
+#numOfDice {
+  text-align: center;
+  width: 100px;
+}
+
+#numOfDice::-webkit-inner-spin-button {
+  display: none;
+}
+
+#clockContainer {
+  padding-bottom: 30px;
+  padding-top: 20px;
+  padding: auto auto auto auto;
+  margin-bottom: 30px;
+}
+
+#clock h1 {
+  text-align: center;
+  font-weight: 700;
+  padding: auto auto auto auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8vw;
+}
+
+#counter {
+  padding: auto auto auto auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: auto;
+  max-width: 500px;
+}
+
+#counter h1 {
+  text-align: center;
+  font-weight: 700;
+  padding: auto auto auto auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8vw;
+}
+
+#counter button {
+  font-size: x-large;
+  justify-self: center;
+  align-self: center;
+  width: auto;
+  cursor: pointer;
+  font-weight: 700;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#Clock {
+  text-align: center;
+  font-weight: 700;
+  padding: auto auto auto auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4vw;
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="div">
+      <label
+        >Guess the Number!! <br />
+        1-100</label
+      ><br />
+      <input id="rndmGuessNum" type="number" placeholder="type a number..." />
+      <br /><button type="submit" id="randomNumBtn" onclick="ranNum()">
+        Submit
+      </button>
+      <br /><br /><label id="result"></label>
+    </div>
+
+    <div id="Dice" class="dice-container div">
+      <h1>Dice Roller</h1>
+      <label># of dice</label><br />
+      <input
+        type="number"
+        min="1"
+        max="6"
+        id="numOfDice"
+        placeholder="Dice:__"
+      /><br />
+      <button onclick="rollDice()">Roll dice</button>
+      <div class="dice div"><h1 id="diceResult">Dice:</h1></div>
+      <div id="diceImages" class="div">
+        <h1>Dice image will be here:</h1>
+        <br />
+      </div>
+    </div>
+
+    <div id="clockContainer" class="div">
+      <div id="clock"><h2 id="Clock">00:00:00</h2></div>
+    </div>
+    <div class="div" id="counter">
+      <h1 id="count">0</h1>
+      <button id="countSave">Save</button>
+      <button id="countIncrease">+</button>
+      <button id="countReset">Reset</button
+      ><button id="countDecrease">-</button>
+      <button id="countLoad">Load</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
