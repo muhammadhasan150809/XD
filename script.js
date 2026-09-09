@@ -59,8 +59,8 @@ function clockTime() {
     const now = new Date()
     let hours = now.getHours().toString().padStart(2, 0)
     let meridium; if (hours <= 12) {
-        meridium = "PM"
-    } else { meridium = "AM" }
+        meridium = "AM"
+    } else { meridium = "PM" }
     let minutes = now.getMinutes().toString().padStart(2, 0)
     let seconds = now.getSeconds().toString().padStart(2, 0)
     document.getElementById("Clock").innerHTML = `Time:<br>${hours}:${minutes}:${seconds}${meridium}`
