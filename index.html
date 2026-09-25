@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="div">
+    <div class="div hero" style="grid-area: div9;">
+      <h1>XD</h1>
+      <p>This is My Website I'll practice JavaScript here</p>
+    </div>
+    <div class="div guessNum" style="grid-area: div1;">
       <label
         >Guess the Number!! <br />
         1-100</label
@@ -19,7 +23,7 @@
       <br /><br /><label id="result"></label>
     </div>
 
-    <div id="Dice" class="dice-container div">
+    <div id="Dice" class="dice-container div" style="grid-area: div2;">
       <h1>Dice Roller</h1>
       <label># of dice</label><br />
       <input
@@ -37,16 +41,61 @@
       </div>
     </div>
 
-    <div id="clockContainer" class="div">
-      <div id="clock"><h2 id="Clock">00:00:00</h2></div>
+    <div id="clockContainer" class="div" style="grid-area: div3;">
+      <div id="clock"><h1 id="Clock">00:00:00</h1></div>
     </div>
-    <div class="div" id="counter">
+    <div class="div" id="counter" style="grid-area: div4;">
       <h1 id="count">0</h1>
       <button id="countSave">Save</button>
-      <button id="countIncrease">+</button>
-      <button id="countReset">Reset</button
-      ><button id="countDecrease">-</button>
+      <button id="countIncrease" class="Start-btn">+</button>
+      <button id="countReset" class="Reset-btn">Reset</button
+      ><button id="countDecrease" class="Decrease-btn Stop-btn">-</button>
       <button id="countLoad">Load</button>
+    </div>
+    <div class="div stopWatchContainer" style="grid-area: div5;">
+      <h1>Stop Watch:</h1><div class="stopWatchBox">
+      <h1 id="stopWatchDisplay" style="grid-area: display;">00:00:00:00</h1>
+      <button id="stopWatchStrt" class="Start-btn" onclick="start()" style="grid-area: buttonStrt;">Start</button>
+      <button id="stopWatchStop" class="Stop-btn" style="grid-area: buttonStop;">Stop</button>
+      <button id="stopWatchReset" class="Reset-btn" style="grid-area: buttonReset;">Reset</button>
+      </div>
+    </div>
+    <div id="calculator" class="div" style="grid-area: div6;">
+      <input id="calcDisplay" readonly> 
+      <div id="keys">
+        <button onclick="appendToDisplay('+')" class="operator">+</button>
+        <button onclick="appendToDisplay('7')" class="keys.btn">7</button>
+        <button onclick="appendToDisplay('8')" class="keys.btn">8</button>
+        <button onclick="appendToDisplay('9')" class="keys.btn">9</button>
+        <button onclick="appendToDisplay('-')" class="operator">-</button>
+        <button onclick="appendToDisplay('4')" class="keys.btn">4</button>
+        <button onclick="appendToDisplay('5')" class="keys.btn">5</button>
+        <button onclick="appendToDisplay('6')" class="keys.btn">6</button>
+        <button onclick="appendToDisplay('*')" class="operator">*</button>
+        <button onclick="appendToDisplay('1')" class="keys.btn">1</button>
+        <button onclick="appendToDisplay('2')" class="keys.btn">2</button>
+        <button onclick="appendToDisplay('3')" class="keys.btn">3</button>
+        <button onclick="appendToDisplay('/')" class="operator">/</button>
+        <button onclick="appendToDisplay('0')" class="keys.btn">0</button>
+        <button onclick="appendToDisplay('.')" class="keys.btn">.</button>
+        <button onclick="calculate()" class="keys.btn">=</button>
+        <button onclick="clearCalcDisplay()" class="operator">C</button>
+      </div>
+    </div>
+    <div class="div" style="grid-area: div7;">
+      <form class="weatherForm">
+        <input type="text" class="cityInput" placeholder="Type a City name...">
+        <button type="submit" id="weatherBtn">Get Weather</button>
+      </form>
+      <div class="card" style="display: none;">
+      </div>
+
+    </div>
+    <div class="div" style="grid-area: div8;">
+      <ul id="chars">
+
+      </ul>
+      <button id="displayChar" onclick="displayCharacter()">Click Me</button>
     </div>
     <script src="./script.js"></script>
   </body>

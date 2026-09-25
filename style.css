@@ -1,14 +1,62 @@
 :root {
-  --backgroundcolor: rgba(0, 140, 255, 0.993);
-  --sec-backgroundcolor: rgba(3, 142, 255, , 0.295);
-  --divbackgroundcolorhover: rgba(3, 142, 255, 0.377);
-  --divshadow: rgba(100, 181, 248, 0.993);
-  --fontmain: rgb(255, 255, 255);
-  --fontsec: rgba(226, 228, 230, 0.616);
+  --backgroundcolor: hsl(0, 0%, 10%);
+  --sec-backgroundcolor: hsl(0, 0%, 20%);
+  --divbackgroundcolorhover: rgba(204, 204, 204, 0.377);
+  --divshadow: hsl(180, 1%, 84%);
+  --fontmain: hsl(0, 0%, 100%);
+  --fontsec: hsla(0, 0%, 100%, 0.616);
+}
+.hero {
+  height: 80vh;
+  width: 80vw;
+}
+.hero h1{
+  font-size: 5rem;
 }
 
 body {
+  margin: 2px;
+  overflow-x: hidden;
+  height: 100%;
+  place-content: center;
+  place-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1);
+  row-gap: 120vh;
+  column-gap: 20px;
+  grid-template-areas:
+    "div9"
+    "div1"
+    "div2"
+    "div3"
+    "div4"
+    "div5"
+    "div6"
+    "div7"
+    "div8";
   background-color: var(--backgroundcolor);
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    height: 100%;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr;
+    row-gap: 80px;
+    column-gap: 80px;
+    grid-template-areas:
+      "div1 div1"
+      "div2 div2"
+      "div3 div3"
+      "div4 div4"
+      "div5 div5"
+      "div6 div6";
+    background-color: var(--backgroundcolor);
+  }
 }
 
 .div {
@@ -31,12 +79,10 @@ body {
   justify-items: center;
   transition: 500ms;
   box-shadow: 1px 1px 10px var(--divshadow);
-  width: 306px;
 }
 
 .div:hover {
-  background-color: var(--divbackgroundcolorhover);
-  transform: translatey(-5px);
+  transform: translatey(-20px);
   box-shadow: 0px 0px 20px 12px var(--divshadow);
 }
 
@@ -82,20 +128,34 @@ button {
   font-weight: 700;
 }
 
-
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--fontmain);
+h1 {
+  text-align: center;
 }
-
-button:focus {
+p {
+  font-size: larger;
+  font-weight: bold;
+}
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  list-style: none;
+}
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
   color: var(--fontmain);
-  background-color: var(--backgroundcolor);
 }
 
 button:hover {
-  color: var(--backgroundcolor);
-  background-color: white;
+  color: var(--fontsec);
+  background-color: transparent;
+  border: 2px solid var(--divshadow);
 }
 
 #diceImages {
@@ -115,8 +175,8 @@ img {
   width: auto;
 }
 
-.dice-container:hover {
-  background-color: transparent;
+.dice-container {
+  width: 40%;
 }
 
 .dice {
@@ -143,10 +203,12 @@ img {
 }
 
 #clockContainer {
+  font-size: 25em;
+  width: 90%;
+  height: 210px;
   padding-bottom: 30px;
   padding-top: 20px;
   padding: auto auto auto auto;
-  margin-bottom: 30px;
 }
 
 #clock h1 {
@@ -154,14 +216,14 @@ img {
   font-weight: 700;
   padding: auto auto auto auto;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 8vw;
+  font-size: 10%;
 }
 
 #counter {
   padding: auto auto auto auto;
   padding-bottom: 20px;
   padding-top: 20px;
-  width: auto;
+  width: 90%;
   max-width: 500px;
 }
 
@@ -191,3 +253,151 @@ img {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4vw;
 }
+
+#countSave {
+  border: none;
+  background-color: hsl(108, 100%, 50%);
+  color: var(--fontmain);
+}
+
+#countSave:hover {
+  border: none;
+  background-color: hsl(108, 100%, 30%);
+  color: hsl(0, 0%, 90%);
+}
+
+.Start-btn {
+  border: 2px solid hsl(204, 100%, 60%);
+  background-color: hsl(204, 95%, 51%);
+  color: var(--fontmain);
+}
+
+.Start-btn:hover {
+  border: 2px solid hsl(204, 100%, 31%);
+  background-color: hsl(204, 100%, 31%);
+  color: hsl(0, 0%, 90%);
+}
+
+.Reset-btn {
+  border: none;
+  background-color: hsl(0, 100%, 51%);
+  color: var(--fontmain);
+}
+
+.Reset-btn:hover {
+  border: none;
+  background-color: hsl(0, 100%, 31%);
+  color: hsl(0, 0%, 90%);
+}
+
+.Stop-btn {
+  border: none;
+  background-color: hsl(41, 100%, 51%);
+  color: var(--fontmain);
+}
+
+.Stop-btn:hover {
+  border: none;
+  background-color: hsl(36, 100%, 41%);
+  color: hsl(0, 0%, 90%);
+}
+#countLoad {
+  border: none;
+  background-color: hsl(300, 99%, 49%);
+  color: hsl(0, 0%, 90%);
+}
+
+#countLoad:hover {
+  border: none;
+  background-color: hsl(300, 99%, 30%);
+  color: hsl(0, 0%, 90%);
+}
+
+.stopWatchContainer {
+  padding: 0px 20px;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stopWatchContainer button {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.stopWatchBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "display display display"
+                       "buttonStrt buttonReset buttonStop";
+}
+
+.stopWatchBox button {
+  width: 80px;
+}
+.guessNum {
+  flex-direction: column;
+  display: flex;
+  width: 90%;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+#keys  button{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border: none;
+
+}
+
+#keys  button:hover {
+  background-color: hsl(0, 0%, 80%);
+  border: none;
+}
+
+#calculator {
+  border-radius: 5px;
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#calcDisplay {
+  width: 96%;
+  padding: 18px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(0, 0%, 14%);
+  color: var(--fontsec);
+  font-size: 30px;
+  border-bottom: 0.1px solid hsl(0, 0%, 40%);
+}
+
+#keys button .operator {
+  border: 4px solid hsl(27, 98%, 49%);
+  background-color: hsl(27, 98%, 49%);
+}
+
+.operator:hover {
+  border: 4px solid hsl(27, 98%, 40%);
+  background-color: hsl(27, 98%, 40%);
+}
+
+#weatherBtn {
+  width: 60%;
+}
+

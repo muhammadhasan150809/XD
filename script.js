@@ -1,4 +1,3 @@
-ranNum()
 
 function ranNum() {
     const minNum = 1;
@@ -39,6 +38,8 @@ function ranNum() {
     }
 }
 
+ranNum()
+
 function rollDice() {
     const numOfDice = document.getElementById("numOfDice").value;
     const diceResult = document.getElementById("diceResult");
@@ -51,8 +52,13 @@ function rollDice() {
         values.push(value)
         images.push(`<img src="Dice_images/${value}.svg" alt"Dice: ${value}">`)
     }
-    diceResult.textContent = `Dice: ${values.join(", ")}`
-    diceImages.innerHTML = images.join(" ")
+    if (numOfDice > 6) {
+        diceResult.textContent = `you CAN'T ROLL more than 6 dice`
+        diceImages.innerHTML = `<h1>you CAN'T HAVE more than 6 DICE</h1>`
+    } else {
+        diceResult.textContent = `Dice: ${values.join(", ")}`
+        diceImages.innerHTML = images.join(" ")
+    }
 }
 
 function clockTime() {
@@ -65,8 +71,11 @@ function clockTime() {
     let seconds = now.getSeconds().toString().padStart(2, 0)
     document.getElementById("Clock").innerHTML = `Time:<br>${hours}:${minutes}:${seconds}${meridium}`
 }
+
 clockTime()
+
 setInterval(clockTime, 1000)
+
 function counter() {
     let count = 1;
     let Count = document.getElementById("count")
@@ -94,4 +103,190 @@ function counter() {
         Count.innerText = count
     }
 }
+
 counter()
+
+
+function stopWatch() {
+    const Display = document.getElementById("stopWatchDisplay")
+    let timer = null;
+    let startTime = 0;
+    let elapsedTime = 0;
+    let isRunning = false;
+
+    document.getElementById("stopWatchStrt").onclick = () => {
+        if (!isRunning) {
+            startTime = Date.now() - elapsedTime;
+            timer = setInterval(update, 10);
+            isRunning = true
+        }
+    }
+    document.getElementById("stopWatchStop").onclick = () => {
+        if (isRunning) {
+            clearInterval(timer);
+            elapsedTime = Date.now() - startTime;
+            isRunning = false
+        }
+
+    }
+    document.getElementById("stopWatchReset").onclick = () => {
+        clearInterval(timer);
+        elapsedTime = Date.now() - startTime;
+        startTime = 0;
+        elapsedTime = 0;
+        isRunning = false;
+        Display.innerHTML = `00:00:00:00`
+    }
+    function update() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+
+        let hours = Math.floor(elapsedTime / (1000 * 60 * 60))
+        let minutes = Math.floor((elapsedTime / (1000 * 60)) % 60)
+        let seconds = Math.floor((elapsedTime / 1000) % 60)
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10)
+
+        hours = String(hours).padStart(2, "0")
+        minutes = String(minutes).padStart(2, "0")
+        seconds = String(seconds).padStart(2, "0")
+        milliseconds = String(milliseconds).padStart(2, "0")
+
+        Display.innerHTML = `${hours}:${minutes}:${seconds}:${milliseconds}`
+    }
+}
+stopWatch()
+
+
+const Displaycalc = document.getElementById("calcDisplay")
+
+function appendToDisplay(input) {
+    Displaycalc.value += input
+}
+
+function clearCalcDisplay() {
+    Displaycalc.value = "";
+    console.log(Displaycalc)
+}
+
+function calculate() {
+    Displaycalc.value = eval(Displaycalc.value)
+}
+
+
+const weatherForm = document.querySelectorAll(".weatherForm")
+const cityInput = document.querySelectorAll(".cityInput")
+const card = document.querySelectorAll(".card")
+const weatherAPI = "d7e859a4c8e3eb5b7219223fd629238d"
+
+
+
+async function getWeatherData(city) {
+
+}
+
+
+const user = [{
+    name: "Natsuki Subaru",
+    age: 17,
+    RBD: true,
+    isStrongest: true,
+    isMarried: false
+}, {
+    name: "Emilia",
+    age: 114,
+    RBD: false,
+    isStrongest: false,
+    isMarried: false
+}, {
+    name: "rem",
+    age: 17,
+    RBD: false,
+    isStrongest: false,
+    isMarried: false
+}, {
+    name: "Nobita",
+    age: 10,
+    RBD: false,
+    isStrongest: false,
+    isMarried: false
+}, {
+    name: "Doraemon",
+    age: 2,
+    RBD: false,
+    isStrongest: true,
+    isMarried: false
+}]
+
+const displayChar = document.getElementById("displayChar");
+
+let charCount = 0;
+
+function displayCharacter() {
+    const chars = document.getElementById("chars")
+
+    const character = user[charCount]
+    
+
+    if (charCount === 0) {
+
+        const li = document.createElement("li")
+
+        li.innerHTML = `Name: ${character.name} <br><br>
+                        Age: ${character.age}<br>
+                        have return by death: ${character.RBD}<br>
+                        they are strongest: ${character.isStrongest}<br>
+                        they are married: ${character.isMarried}<br><br>`
+
+        chars.appendChild(li)
+        charCount++
+    }else if  (charCount === 1) {
+
+        const li = document.createElement("li")
+
+        li.innerHTML = `Name: ${character.name} <br><br>
+                        Age: ${character.age}<br>
+                        have return by death: ${character.RBD}<br>
+                        they are strongest: ${character.isStrongest}<br>
+                        they are married: ${character.isMarried}<br><br>`
+
+        chars.appendChild(li)
+        charCount++
+
+    }else if (charCount === 2) {
+
+        const li = document.createElement("li")
+
+        li.innerHTML = `Name: ${character.name} <br><br>
+                        Age: ${character.age}<br>
+                        have return by death: ${character.RBD}<br>
+                        they are strongest: ${character.isStrongest}<br>
+                        they are married: ${character.isMarried}<br><br>`
+
+        chars.appendChild(li)
+        charCount++
+    }else if (charCount === 3) {
+
+        const li = document.createElement("li")
+
+        li.innerHTML = `Name: ${character.name} <br><br>
+                        Age: ${character.age}<br>
+                        have return by death: ${character.RBD}<br>
+                        they are strongest: ${character.isStrongest}<br>
+                        they are married: ${character.isMarried}<br><br>`
+
+        chars.appendChild(li)
+        charCount++
+    }else if (charCount === 4) {
+
+        const li = document.createElement("li")
+
+        li.innerHTML = `Name: ${character.name} <br><br>
+                        Age: ${character.age}<br>
+                        have return by death: ${character.RBD}<br>
+                        they are strongest: ${character.isStrongest}<br>
+                        they are married: ${character.isMarried}<br><br>`
+
+        chars.appendChild(li)
+        charCount = 0
+    }
+}
